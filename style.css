@@ -1,17 +1,17 @@
 html{
     font-family: sans-serif;
+
+    --blue-color: rgb(33, 141, 236);
 }
 body{
     height: 100vh;
     margin: 0 auto;
-    /* width: 71.55%; */
-    /* background-color: black; */
     display: grid;
     grid-template-columns: 300px 1fr;
 }
 
 .sidebar{
-    background-color: rgb(33, 141, 236);
+    background-color: var(--blue-color);
     color: white;
     padding: 15px 5px;
     display: grid;
@@ -45,18 +45,19 @@ body{
 .mainboard{
     background-color: antiquewhite;
     display: grid;
-    grid-template-rows: 160px 1fr;
+    grid-template-rows: 180px 1fr;
     background-color: rgb(220, 225, 234);
     overflow: hidden;
     .top-bar{
         background-color: white;
         box-shadow: 0 5px 5px rgb(195, 195, 195);
         display: grid;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 70px 1fr;
+        padding: 10px 50px;
 
         .top-1st{
             display: grid;
-            grid-template-columns: 80px 500px 1fr 50px 100px;
+            grid-template-columns: 50px 500px 1fr 50px 250px;
             align-items: center;
 
             .search-box{
@@ -74,13 +75,148 @@ body{
             .icon{
                 width: 24px;
             }
-            .search-icon{
-                justify-self: end;
-                margin-right: 10px;
+            .profile1{
+                font-size: 18px;
+                font-weight: bold;
+                display: grid;
+                grid-template-columns: 80px 1fr;
+                align-items: center;
+
+                & img{
+                    border: 1px solid black;
+                    border-radius: 50%;
+                    width: 50px;
+                }
+            }
+        }
+        .top-2nd{
+            display: grid;
+            grid-template-columns: 1fr 120px 120px 120px;
+            align-items: center;
+            justify-items: left;
+
+            .profile2{
+                display: grid;
+                grid-template-columns: 100px 1fr;
+                align-items: center;
+
+                & img{
+                    width: 70px;
+                    border: 1px solid black;
+                    border-radius: 50%;
+                }
+                & div{
+                    display: grid;
+                    align-content: center;
+                    & h2{
+                        margin-bottom: 0;
+                        margin-top: 10px;
+                    }
+                }
+            }
+            .action-button{
+                background-color: var(--blue-color);
+                color: white;
+                font-size: 16px;
+                font-weight: bold;
+                border: none;
+                border-radius: 20px;
+                width: 100px;
+                height: 40px;
             }
         }
     }
     .content{
         display: grid;
+        grid-template-columns: 1fr 350px;
+        padding: 20px 40px;
+
+        .projects{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 370px);
+            gap: 20px;
+
+            .project-card{
+                background-color: white;
+                border-left: 10px solid orange;
+                border-radius: 10px;
+                box-sizing: border-box;
+                width: 100%;
+                height: 220px;
+                padding: 20px;
+                padding-bottom: 20px;
+                box-shadow: 2px 6px 5px rgb(198, 198, 198);
+                & h3{
+                    margin-bottom: 5px;
+                }
+                & p{
+                    color: rgb(100, 100, 100);
+                    margin-top: 0px;
+                }
+                .project-actions{
+                    display: grid;
+                    grid-template-columns: 1fr repeat(3, 40px);
+                    & img{
+                        width: 24px;
+                    }
+                }
+            }
+        }
+        .updates{
+            padding-left: 40px;
+
+            .announcements, .trending{
+                background-color: white;
+                box-shadow: 2px 6px 5px rgb(198, 198, 198);
+                border-radius: 10px;
+                box-sizing: border-box;
+                height: 300px;
+                width: 100%;
+                padding: 30px;
+            }
+            .separator{
+                border-top: 1px solid rgb(204, 204, 204);
+                width: 100%;
+            }
+            .announcement{
+                margin-top: 10px ;
+                & h4{
+                    margin: 0;
+                }
+                & p{
+                    color: rgb(100, 100, 100);
+                    margin-top: 0px;
+                    font-size: 12px;
+                }
+            }
+            .trending{
+                display: grid;
+                gap: 10px;
+                .trend{
+                    display: grid;
+                    grid-template-columns: 80px 1fr;
+                    align-items: center;
+                    gap: 10px;
+                    .profile3{
+                        justify-self: center;
+                        width: 60px;
+                        height: 50px;
+                        border-radius: 50%;
+                        display: grid;
+                        align-items: center;
+                        & img{
+                            width: 50px;
+                            justify-self: center;
+                        }
+                    }
+                    .name{
+                        font-weight: bold;
+                    }
+                    .project-name{
+                        color: rgb(100, 100, 100);
+                    }
+                }
+            }
+        }
     }
 }
